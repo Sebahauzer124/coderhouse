@@ -1,0 +1,400 @@
+/* Estilos globales */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #e8f5e9; /* Color verde claro de fondo */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo del encabezado */
+header {
+    background: linear-gradient(135deg, #004d40, #00796b); /* Gradiente verde */
+    color: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 10px 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.instagram-icon {
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.instagram-icon i {
+    font-size: 2rem;
+}
+
+.instagram-icon:hover {
+    color: #ff4081; /* Color rosa de Instagram en hover */
+}
+
+/* Estilo del menú de navegación */
+nav {
+    width: 100%;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    color: #00796b;
+    background-color: #ffffff;
+}
+
+/* Estilo del carrusel */
+.carousel-container {
+    max-width: 100%;
+    margin: 20px auto;
+}
+
+.carousel-inner {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.carousel-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 300px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Ajusta la imagen para cubrir el área sin deformarse */
+    border-radius: 12px;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+.carousel-control-prev-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"%3E%3Cpath fill="none" stroke="%23ffffff" stroke-width="1.5" d="M11.5 1.5L4.5 8l7 6.5"/%3E%3C/svg%3E');
+}
+
+.carousel-control-next-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"%3E%3Cpath fill="none" stroke="%23ffffff" stroke-width="1.5" d="M4.5 1.5l7 6.5-7 6.5"/%3E%3C/svg%3E');
+}
+
+/* Imagen del encabezado */
+header img.rounded-image {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+/* Estilo del contenido principal */
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+/* Estilo del artículo */
+article.fondo-seccion {
+    flex: 3;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+article.fondo-sección:hover,
+article.fondo-sección:focus {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+}
+
+article h2 {
+    font-size: 2rem;
+    color: #004d40;
+    margin-bottom: 10px;
+}
+
+article p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* Estilo del aside */
+aside {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    margin-left: 20px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+aside:hover,
+aside:focus {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+}
+
+aside h3 {
+    color: #004d40;
+    margin-top: 0;
+}
+
+aside img.rounded-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Estilo de las secciones */
+.content-sections {
+    margin: 20px;
+}
+
+.content-sections section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.content-sections section:hover,
+.content-sections section:focus {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+}
+
+.content-sections h3 {
+    color: #004d40;
+    margin-top: 0;
+}
+
+/* Estilo del pie de página */
+footer {
+    background: linear-gradient(135deg, #004d40, #00796b); /* Gradiente verde */
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries */
+
+/* Dispositivos móviles (pantallas pequeñas) */
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .instagram-icon {
+        margin-bottom: 5px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    article.fondo-seccion, aside {
+        margin: 0;
+        width: 100%;
+    }
+
+    aside {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    .content-sections {
+        margin: 10px;
+    }
+
+    .content-sections section {
+        padding: 15px;
+    }
+}
+
+/* Pantallas grandes (pantallas mayores a 1200px) */
+@media (min-width: 1200px) {
+    .cremas-lista {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .cremas-lista li {
+        flex: 1 1 calc(33.333% - 20px); /* Tres elementos por fila, con espacio entre ellos */
+        margin: 10px; /* Espacio entre los elementos */
+    }
+}
+
+/* Dispositivos tablet y pantallas medianas */
+@media (min-width: 577px) and (max-width: 992px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    article.fondo-seccion, aside {
+        margin: 0;
+        width: 100%;
+    }
+
+    aside {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    .content-sections {
+        margin: 15px;
+    }
+
+    .content-sections section {
+        padding: 18px;
+    }
+}
+
+/* Dispositivos grandes (pantallas grandes) */
+@media (min-width: 993px) {
+    main {
+        flex-direction: row;
+    }
+
+    article.fondo-seccion {
+        flex: 3;
+        margin-right: 20px;
+    }
+
+    aside {
+        flex: 1;
+        margin-left: 0;
+    }
+
+    .content-sections {
+        margin: 20px;
+    }
+
+    .content-sections section {
+        padding: 20px;
+    }
+}
+
+/* Estilo para la lista de cremas */
+.cremas-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    margin: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+/* Estilo para cada elemento de la lista */
+.cremas-lista li {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0; /* Borde suave */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 15px;
+    width: 100%; /* Ocupa el 100% del ancho disponible en pantallas pequeñas */
+    max-width: 300px; /* Ancho máximo en pantallas grandes */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Centra el contenido del li */
+}
+
+/* Efecto de elevación al pasar el mouse */
+.cremas-lista li:hover {
+    transform: translateY(-10px); /* Desplaza el elemento hacia arriba */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta la sombra para dar el efecto de elevación */
+}
+
+/* Asegura que las imágenes tengan un tamaño consistente */
+.cremas-lista img {
+    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-width: 200px; /* Ancho máximo para las imágenes */
+    border-radius: 8px; /* Bordes redondeados para las imágenes */
+    margin-bottom: 15px; /* Espacio entre la imagen y el texto */
+}
+
+/* Pantallas grandes (mayores a 992px) */
+@media (min-width: 993px) {
+    .cremas-lista {
+        justify-content: space-between; /* Espacio entre los elementos */
+    }
+
+    .cremas-lista li {
+        width: calc(33.333% - 20px); /* Tres elementos por fila, con espacio entre ellos */
+    }
+}
+
+/* Pantallas medianas (entre 577px y 992px) */
+@media (min-width: 577px) and (max-width: 992px) {
+    .cremas-lista li {
+        width: calc(50% - 20px); /* Dos elementos por fila */
+    }
+}
+
+/* Pantallas pequeñas (menores a 577px) */
+@media (max-width: 576px) {
+    .cremas-lista li {
+        width: 100%; /* Un elemento por fila */
+    }
+}
