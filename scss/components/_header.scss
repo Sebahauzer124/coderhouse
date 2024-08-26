@@ -1,0 +1,129 @@
+// Archivo: header.scss
+
+@keyframes fadeInSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  header {
+    animation: fadeInSlideUp 1s ease-out;
+  
+    .header-content {
+      text-align: center;
+      padding: 2rem 1rem; // Aumento del padding para más espacio alrededor del título
+      background-color: #97e6f0; // Color de fondo suave y fresco
+  
+      h1 {
+        background-color: #97e6f0; // Color de fondo suave y fresco
+        font-size: 2.5rem; // Tamaño de fuente mayor para mayor impacto
+        font-weight: bold; // Fuente en negrita para destacar
+        color: #004d40; // Color principal del texto
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); // Sombra sutil para darle profundidad
+        line-height: 1.2; // Espaciado entre líneas para mejor legibilidad
+  
+        .instagram-icon {
+          margin-left: 0.75rem; // Espacio mayor entre el título y el ícono
+          font-size: 1.5rem;
+          color: #004d40; // Color del ícono
+          transition: color 0.3s ease; // Transición suave del color
+  
+          &:hover {
+            background-color: #00796b;
+            color: #00796b; // Color del ícono en hover
+          }
+        }
+      }
+    }
+  
+    .navbar {
+      &.navbar-custom {
+        background-color: #004d40; // Color de fondo oscuro para la navbar
+  
+        .navbar-toggler {
+          border-color: transparent;
+  
+          .navbar-toggler-icon {
+            background-color: #0c1617; // Color de fondo del ícono
+          }
+        }
+  
+        .navbar-nav {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          padding: 0;
+          margin: 0;
+  
+          .nav-item {
+            list-style: none;
+  
+            .nav-link {
+              display: block;
+              padding: 0.75rem 1.25rem;
+              margin: 0.25rem;
+              color: #050909; // Color del texto
+              font-size: 1.125rem; // Tamaño de fuente
+              font-weight: 500; // Peso de fuente
+              border-radius: 0.5rem; // Bordes redondeados
+              text-decoration: none; // Elimina el subrayado
+              transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+              text-align: center;
+  
+              &:hover {
+                color: #004d40; // Color del texto en hover
+                background-color: #97e6f0; // Color de fondo en hover
+                transform: scale(1.1); // Efecto de aumento en hover
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Sombra sutil en hover
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .carousel-container {
+      .carousel {
+        .carousel-inner {
+          .carousel-item {
+            img {
+              width: 100%;
+              height: auto;
+              border-radius: 8px; // Bordes redondeados para las imágenes
+              transition: transform 0.5s ease;
+  
+              &:hover {
+                transform: scale(1.05); // Efecto de zoom en hover
+              }
+            }
+          }
+        }
+  
+        .carousel-control-prev,
+        .carousel-control-next {
+          width: 3rem;
+          height: 3rem;
+          background-color: rgba(0, 77, 64, 0.7); // Color semi-transparente para los controles
+          border-radius: 50%;
+          transition: background-color 0.3s ease;
+  
+          &:hover {
+            background-color: rgba(0, 77, 64, 0.9); // Color más oscuro en hover
+          }
+  
+          .carousel-control-prev-icon,
+          .carousel-control-next-icon {
+            background-size: 1.5rem 1.5rem;
+            background-color: #ffffff; // Color del icono de control
+          }
+        }
+      }
+    }
+  }
+  

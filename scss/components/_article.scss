@@ -1,0 +1,38 @@
+// Estilo del artículo
+article {
+    &.fondo-seccion {
+      flex: 3;
+      background: linear-gradient(135deg, #ffffff, #e0f7fa); // Gradiente de fondo sutil
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      transition: box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease;
+  
+      &:hover,
+      &:focus {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        transform: scale(1.02);
+        background: linear-gradient(135deg, #e0f7fa, #b9fbc0); // Gradiente más vibrante en hover
+      }
+  
+      h2 {
+        font-size: 2rem;
+        color: #ffffff; // Color del texto en h2
+        margin-bottom: 10px;
+        padding: 10px;
+        background: rgba(0, 119, 104, 0.7); // Fondo verde translúcido para el h2
+        border-radius: 8px; // Borde redondeado para el fondo del h2
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); // Sombra de texto para darle más profundidad
+      }
+  
+      p {
+        line-height: 1.8;
+        margin-bottom: 15px;
+        color: #004d40; // Color del texto en el párrafo
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.8); // Fondo blanco translúcido para el párrafo
+        border-radius: 8px; // Borde redondeado para el fondo del párrafo
+      }
+    }
+  }
+  

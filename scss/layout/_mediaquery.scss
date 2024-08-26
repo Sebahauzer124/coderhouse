@@ -1,0 +1,121 @@
+/* mediaqueries.scss */
+
+/* Dispositivos móviles (pantallas pequeñas) */
+@media (max-width: 576px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .instagram-icon {
+    margin-bottom: 5px;
+  }
+
+
+  main {
+    flex-direction: column;
+  }
+
+  article.fondo-seccion,
+  aside {
+    margin: 0;
+    width: 100%;
+  }
+
+  aside {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+
+  .content-sections {
+    margin: 10px;
+  }
+
+  section.content-sections {
+    padding: 15px;
+  }
+
+}
+
+/* Dispositivos tablet y pantallas medianas */
+@media (min-width: 577px) and (max-width: 992px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+
+  main {
+    flex-direction: column;
+  }
+
+  article.fondo-seccion,
+  aside {
+    margin: 0;
+    width: 100%;
+  }
+
+  aside {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+
+  .content-sections {
+    margin: 15px;
+  }
+
+  section.content-sections {
+    padding: 18px;
+  }
+
+}
+
+/* Dispositivos grandes (pantallas grandes) */
+@media (min-width: 1200px) {
+  main {
+    flex-direction: row;
+  }
+
+  article.fondo-seccion {
+    flex: 3;
+    margin-right: 20px;
+  }
+
+  aside {
+    flex: 1;
+    margin-left: 0;
+  }
+
+  .content-sections {
+    margin: 20px;
+  }
+
+  section.content-sections {
+    padding: 20px;
+  }
+
+
+}
+
+// Consultas de medios para el carrusel
+@media (max-width: 576px) {
+  .carousel-container {
+    .carousel-inner {
+      .carousel-item img {
+        max-height: 300px; // Ajusta la altura máxima en pantallas pequeñas
+      }
+    }
+  }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+  .carousel-container {
+    .carousel-inner {
+      .carousel-item img {
+        max-height: 400px; // Ajusta la altura máxima en pantallas medianas
+      }
+    }
+  }
+}
+
+
+
+
