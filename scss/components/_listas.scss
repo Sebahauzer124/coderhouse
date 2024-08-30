@@ -114,14 +114,5 @@
     }
   }
 
-  @media (max-width: 768px) {
-    ol {
-      flex-direction: column;
-      gap: 20px; // Ajuste del gap para pantallas pequeñas
-
-      li {
-        width: 100%;
-      }
-    }
-  }
+  
 }
