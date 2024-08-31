@@ -1,81 +1,89 @@
-// Carrusel
+/* Carrusel */
 .carousel-container {
-    width: 100%;
-    margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+
+  .carousel-inner {
     position: relative;
     overflow: hidden;
-  
-    .carousel-inner {
-      position: relative;
-      overflow: hidden;
+    border-radius: 12px;
+
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 500px; /* Ajusta la altura máxima según sea necesario */
+      object-fit: cover; /* Ajusta la imagen para cubrir el área sin deformarse */
       border-radius: 12px;
-  
-      img {
-        width: 100%;
-        height: auto;
-        max-height: 500px; // Ajusta la altura máxima según sea necesario
-        object-fit: cover; // Ajusta la imagen para cubrir el área sin deformarse
-        border-radius: 12px;
-        transition: transform 0.5s ease; // Animación suave al cambiar de imagen
-      }
-    }
-  
-    .carousel-control-prev,
-    .carousel-control-next {
-      width: 40px; // Tamaño de las flechas
-      height: 40px;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5); // Fondo translúcido
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease; // Transición suave para el fondo
-      padding: 0; // Quita el padding
-      box-shadow: none; // Elimina cualquier sombra que pueda crear el cuadrado
-      outline: none; // Elimina el contorno de enfoque
-      overflow: hidden; // Asegura que el contenido no sobresalga
-      position: absolute; // Asegura la posición sobre el carrusel
-  
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.7); // Fondo más oscuro al pasar el mouse
-      }
-  
-      // Estilo de las flechas con pseudo-elementos
-      &::before {
-        content: '';
-        display: block;
-        width: 12px; // Tamaño de la flecha
-        height: 12px;
-        border-style: solid;
-        border-width: 3px 3px 0 0;
-        border-color: white;
-        transform: rotate(45deg);
-      }
-    }
-  
-    .carousel-control-prev::before {
-      // Flecha hacia la izquierda
-      transform: rotate(-135deg);
-    }
-  
-    .carousel-control-next::before {
-      // Flecha hacia la derecha
-      transform: rotate(45deg);
-    }
-  
-    .carousel-control-prev {
-      left: 10px; // Ajusta la posición izquierda
-    }
-  
-    .carousel-control-next {
-      right: 10px; // Ajusta la posición derecha
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Animación suave al cambiar de imagen */
     }
   }
-  
-  
-  
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 40px; /* Tamaño de las flechas */
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo translúcido */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transición suave para el fondo y movimiento */
+    padding: 0; /* Quita el padding */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para darle profundidad */
+    outline: none; /* Elimina el contorno de enfoque */
+    position: absolute; /* Asegura la posición sobre el carrusel */
+    overflow: hidden; /* Asegura que el contenido no sobresalga */
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.7); /* Fondo más oscuro al pasar el mouse */
+      transform: scale(1.1); /* Ligeramente más grande al pasar el mouse */
+    }
+
+    /* Estilo de las flechas con pseudo-elementos */
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 12px; /* Tamaño de la flecha */
+      height: 12px;
+      border-style: solid;
+      border-width: 3px 3px 0 0;
+      border-color: white; /* Color blanco para la flecha */
+      transform: rotate(45deg);
+      background: none; /* Asegura que no haya fondo */
+      transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transición suave para el color de la flecha */
+    }
+  }
+
+  .carousel-control-prev::before {
+    /* Flecha hacia la izquierda */
+    transform: rotate(-135deg);
+  }
+
+  .carousel-control-next::before {
+    /* Flecha hacia la derecha */
+    transform: rotate(45deg);
+  }
+
+  .carousel-control-prev {
+    left: 10px; /* Ajusta la posición izquierda */
+    margin-left: 15px; /* Agrega margen izquierdo adicional */
+  }
+
+  .carousel-control-next {
+    right: 10px; /* Ajusta la posición derecha */
+    margin-right: 15px; /* Agrega margen derecho adicional */
+  }
+
+  /* Solución para el fondo blanco de las flechas */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    display: none; /* Oculta los iconos predeterminados de Bootstrap */
+  }
+}

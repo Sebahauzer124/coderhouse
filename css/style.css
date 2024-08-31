@@ -53,12 +53,24 @@ header .header-content h1 .instagram-icon:hover {
 }
 header .navbar.navbar-custom {
   background-color: #004d40;
+  display: flex; /* Flex para centrar los elementos */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
 }
 header .navbar.navbar-custom .navbar-toggler {
   border-color: transparent;
+  margin: 1rem auto; /* Añade margen superior e inferior */
+  padding: 0.5rem 1rem; /* Aumenta el tamaño del área de clic */
+  outline: none; /* Elimina el borde cuando se hace clic */
 }
 header .navbar.navbar-custom .navbar-toggler .navbar-toggler-icon {
-  background-color: #0c1617;
+  width: 2rem; /* Aumenta el tamaño del ícono */
+  height: 2rem;
+  background-color: #ffffff; /* Color de fondo del ícono para mayor visibilidad */
+  border-radius: 0.25rem; /* Bordes ligeramente redondeados */
+}
+header .navbar.navbar-custom .navbar-toggler:hover, header .navbar.navbar-custom .navbar-toggler:focus {
+  background-color: rgba(255, 255, 255, 0.2); /* Color de fondo en hover */
 }
 header .navbar.navbar-custom .navbar-nav {
   display: flex;
@@ -88,40 +100,14 @@ header .navbar.navbar-custom .navbar-nav .nav-item .nav-link:hover {
   transform: scale(1.1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-header .carousel-container .carousel .carousel-inner .carousel-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  transition: transform 0.5s ease;
-}
-header .carousel-container .carousel .carousel-inner .carousel-item img:hover {
-  transform: scale(1.05);
-}
-header .carousel-container .carousel .carousel-control-prev,
-header .carousel-container .carousel .carousel-control-next {
-  width: 3rem;
-  height: 3rem;
-  background-color: rgba(0, 77, 64, 0.7);
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-}
-header .carousel-container .carousel .carousel-control-prev:hover,
-header .carousel-container .carousel .carousel-control-next:hover {
-  background-color: rgba(0, 77, 64, 0.9);
-}
-header .carousel-container .carousel .carousel-control-prev .carousel-control-prev-icon,
-header .carousel-container .carousel .carousel-control-prev .carousel-control-next-icon,
-header .carousel-container .carousel .carousel-control-next .carousel-control-prev-icon,
-header .carousel-container .carousel .carousel-control-next .carousel-control-next-icon {
-  background-size: 1.5rem 1.5rem;
-  background-color: #ffffff;
-}
 
+/* Carrusel */
 .carousel-container {
   width: 100%;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  /* Solución para el fondo blanco de las flechas */
 }
 .carousel-container .carousel-inner {
   position: relative;
@@ -131,18 +117,18 @@ header .carousel-container .carousel .carousel-control-next .carousel-control-ne
 .carousel-container .carousel-inner img {
   width: 100%;
   height: auto;
-  max-height: 500px;
-  object-fit: cover;
+  max-height: 500px; /* Ajusta la altura máxima según sea necesario */
+  object-fit: cover; /* Ajusta la imagen para cubrir el área sin deformarse */
   border-radius: 12px;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Animación suave al cambiar de imagen */
 }
 .carousel-container .carousel-control-prev,
 .carousel-container .carousel-control-next {
-  width: 40px;
+  width: 40px; /* Tamaño de las flechas */
   height: 40px;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo translúcido */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -150,39 +136,51 @@ header .carousel-container .carousel .carousel-control-next .carousel-control-ne
   z-index: 1000;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  padding: 0;
-  box-shadow: none;
-  outline: none;
-  overflow: hidden;
-  position: absolute;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transición suave para el fondo y movimiento */
+  padding: 0; /* Quita el padding */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para darle profundidad */
+  outline: none; /* Elimina el contorno de enfoque */
+  position: absolute; /* Asegura la posición sobre el carrusel */
+  overflow: hidden; /* Asegura que el contenido no sobresalga */
+  /* Estilo de las flechas con pseudo-elementos */
 }
 .carousel-container .carousel-control-prev:hover,
 .carousel-container .carousel-control-next:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo más oscuro al pasar el mouse */
+  transform: scale(1.1); /* Ligeramente más grande al pasar el mouse */
 }
 .carousel-container .carousel-control-prev::before,
 .carousel-container .carousel-control-next::before {
   content: "";
-  display: block;
-  width: 12px;
+  display: inline-block;
+  width: 12px; /* Tamaño de la flecha */
   height: 12px;
   border-style: solid;
   border-width: 3px 3px 0 0;
-  border-color: white;
+  border-color: white; /* Color blanco para la flecha */
   transform: rotate(45deg);
+  background: none; /* Asegura que no haya fondo */
+  transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transición suave para el color de la flecha */
 }
 .carousel-container .carousel-control-prev::before {
+  /* Flecha hacia la izquierda */
   transform: rotate(-135deg);
 }
 .carousel-container .carousel-control-next::before {
+  /* Flecha hacia la derecha */
   transform: rotate(45deg);
 }
 .carousel-container .carousel-control-prev {
-  left: 10px;
+  left: 10px; /* Ajusta la posición izquierda */
+  margin-left: 15px; /* Agrega margen izquierdo adicional */
 }
 .carousel-container .carousel-control-next {
-  right: 10px;
+  right: 10px; /* Ajusta la posición derecha */
+  margin-right: 15px; /* Agrega margen derecho adicional */
+}
+.carousel-container .carousel-control-prev-icon,
+.carousel-container .carousel-control-next-icon {
+  display: none; /* Oculta los iconos predeterminados de Bootstrap */
 }
 
 main {
@@ -428,7 +426,7 @@ footer .footer-animation.visible {
   transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
   width: calc(33.333% - 30px);
 }
-.cremas-lista ol li h4 {
+.cremas-lista ol li h2 {
   font-size: 1.5rem;
   color: #333;
   margin-bottom: 15px;
@@ -453,47 +451,80 @@ footer .footer-animation.visible {
   transform: scale(1.05);
   opacity: 0.9;
 }
-@media (max-width: 768px) {
-  .cremas-lista ol {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .cremas-lista ol li {
-    width: 100%;
-  }
-}
 
-.form {
-  display: flex;
-  flex-direction: column;
+.container .form-group {
+  margin-bottom: 1.5rem;
 }
-.form .form-group {
-  margin-bottom: 15px;
-}
-.form .form-group label {
-  margin-bottom: 5px;
+.container .form-group label {
   font-weight: bold;
 }
-.form .form-group input,
-.form .form-group textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 100%;
+.container .form-group input,
+.container .form-group select {
+  border: 1px solid #28a745;
+  transition: border-color 0.3s;
 }
-.form .form-group input:focus,
-.form .form-group textarea:focus {
-  border-color: #007bff;
-  outline: none;
+.container .form-group input:hover,
+.container .form-group select:hover {
+  border-color: #1e7e34;
 }
-.form .form-actions {
-  display: flex;
-  justify-content: flex-end;
+.container button {
+  background-color: #28a745;
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
-.form .form-actions .btn {
-  margin-left: 10px;
+.container button:hover {
+  background-color: #1e7e34;
 }
 
+.footer-container {
+  background-color: #28a745;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+.footer-container .footer-section {
+  padding: 1rem 0;
+}
+.footer-container .footer-section h3 {
+  font-size: 1.5rem;
+}
+@media (max-width: 768px) {
+  .footer-container .footer-section h3 {
+    font-size: 1.2rem;
+  }
+}
+.footer-container .footer-section p {
+  margin: 0;
+  line-height: 1.5;
+}
+.footer-container .footer-section .social-icons {
+  margin-top: 0.5rem;
+}
+.footer-container .footer-section .social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  transition: color 0.3s;
+}
+.footer-container .footer-section .social-icons a:hover {
+  color: #5dd879;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    font-size: 0.9rem;
+  }
+  .header-content h1 {
+    font-size: 2rem;
+  }
+  .form-group label {
+    font-size: 0.9rem;
+  }
+}
 /* mediaqueries.scss */
 /* Dispositivos móviles (pantallas pequeñas) */
 @media (max-width: 576px) {
@@ -574,6 +605,15 @@ footer .footer-animation.visible {
 @media (min-width: 577px) and (max-width: 992px) {
   .carousel-container .carousel-inner .carousel-item img {
     max-height: 400px;
+  }
+}
+@media (max-width: 768px) {
+  ol {
+    flex-direction: column;
+    gap: 20px;
+  }
+  ol li {
+    width: 100%;
   }
 }
 
