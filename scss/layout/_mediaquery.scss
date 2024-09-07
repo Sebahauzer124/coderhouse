@@ -115,37 +115,21 @@
     }
   }
 }
-@media (max-width: 1200px) {
-  .cremas-lista {
-    ol {
-      flex-direction: row;
-      justify-content: center; // Centrar elementos en la fila
-      flex-wrap: wrap; // Permitir que los elementos se envuelvan en múltiples filas
-    }
-
-    li {
-      width: calc(50% - 15px); // Ancho para pantallas medianas
-    }
-  }
-}
 
 @media (max-width: 768px) {
   .cremas-lista {
     ol {
-      flex-direction: column; // Tarjetas una debajo de la otra
-      align-items: center; // Centrar elementos en la columna
-      gap: 20px; // Espacio entre tarjetas
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     li {
-      width: 100%; // Ancho completo para pantallas pequeñas
-      max-width: 600px; // Limitar el ancho máximo para mejorar la presentación
-      padding: 15px; // Ajustar el espacio interno
-    }
-
-    img {
-      max-width: 100%; // Asegurar que las imágenes no se salgan del contenedor
-      height: auto; // Mantener la proporción de las imágenes
+      flex: 1 1 100%; // Cada elemento ocupa el 100% del ancho disponible
+      box-sizing: border-box; // Incluye el padding y border en el ancho total
+      max-width: 100%; // Evita que los elementos superen el ancho del contenedor
+      text-align: center; // Centra el texto dentro del elemento
+      padding: 0 1rem; // Añade espacio alrededor de los elementos
     }
   }
 }
@@ -153,21 +137,13 @@
 @media (max-width: 480px) {
   .cremas-lista {
     ol {
-      flex-direction: column; // Tarjetas una debajo de la otra
-      align-items: center; // Alinear tarjetas al centro
-      gap: 20px; // Espacio entre tarjetas
-      max-width: 500px; // Limitar el ancho máximo para mejorar la presentación
+      padding: 0;
+      margin: 0;
     }
 
     li {
-      width: 100%; // Ancho completo para pantallas muy pequeñas
-      max-width: 500px; // Limitar el ancho máximo para mejorar la presentación
-      padding: 15px; // Ajustar el espacio interno
-    }
-
-    img {
-      max-width: 100%; // Asegurar que las imágenes no se salgan del contenedor
-      height: auto; // Mantener la proporción de las imágenes
+      margin-bottom: 2rem; // Más espacio entre los elementos en pantallas más pequeñas
+      padding: 1rem; // Añade espacio interno
     }
   }
 }
