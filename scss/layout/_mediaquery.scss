@@ -115,54 +115,59 @@
     }
   }
 }
+@media (max-width: 1200px) {
+  .cremas-lista {
+    ol {
+      flex-direction: row;
+      justify-content: center; // Centrar elementos en la fila
+      flex-wrap: wrap; // Permitir que los elementos se envuelvan en múltiples filas
+    }
 
-/* Estilos para pantallas pequeñas */
-
+    li {
+      width: calc(50% - 15px); // Ancho para pantallas medianas
+    }
+  }
+}
 
 @media (max-width: 768px) {
   .cremas-lista {
-    padding: 0 1rem; // Añade un padding lateral para que el contenido no toque los bordes
-
     ol {
-      display: flex; // Usa flexbox para la disposición de los elementos
-      flex-wrap: wrap; // Permite que los elementos se envuelvan en filas
-      justify-content: center; // Centra los elementos horizontalmente
-      gap: 20px; // Espacio entre los elementos
-      padding: 0; // Quita el padding predeterminado de la lista
-      margin: 0; // Quita el margen predeterminado de la lista
+      flex-direction: column; // Tarjetas una debajo de la otra
+      align-items: center; // Centrar elementos en la columna
+      gap: 20px; // Espacio entre tarjetas
+    }
 
-      li {
-        display: flex; // Cambia la disposición de los elementos de la lista a flexbox
-        flex-direction: column; // Alinea los elementos en una columna
-        align-items: center; // Centra los elementos horizontalmente
-        text-align: center; // Centra el texto dentro de los elementos de la lista
-        border: 1px solid #ddd; // Añade un borde sutil alrededor de los elementos de la lista
-        border-radius: 8px; // Redondea las esquinas del borde
-        padding: 1rem; // Añade padding interno
-        background-color: #fff; // Fondo blanco para los elementos de la lista
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // Sombra sutil para darle profundidad
-        width: calc(50% - 20px); // Ajusta el ancho para que haya dos elementos por fila, considerando el espacio entre ellos
-        max-width: 300px; // Establece un ancho máximo para los elementos
+    li {
+      width: 100%; // Ancho completo para pantallas pequeñas
+      max-width: 600px; // Limitar el ancho máximo para mejorar la presentación
+      padding: 15px; // Ajustar el espacio interno
+    }
 
-        img {
-          max-width: 100%; // Asegura que la imagen no exceda el ancho del contenedor
-          height: auto; // Mantiene la proporción de la imagen
-          border-radius: 8px; // Redondea las esquinas de la imagen
-          margin-bottom: 0.5rem; // Añade margen inferior para separar la imagen del texto
-        }
-
-        p {
-          font-size: 0.9rem; // Ajusta el tamaño de la fuente del texto para pantallas pequeñas
-          line-height: 1.4; // Mejora la legibilidad con un mayor interlineado
-          margin: 0; // Quita el margen predeterminado del párrafo
-        }
-      }
+    img {
+      max-width: 100%; // Asegurar que las imágenes no se salgan del contenedor
+      height: auto; // Mantener la proporción de las imágenes
     }
   }
+}
 
-  .productos-intro {
-    text-align: center; // Centra el texto en pantallas pequeñas
-    font-size: 1.5rem; // Ajusta el tamaño del texto para mejor legibilidad
-    margin: 1rem 0; // Añade un margen superior e inferior
+@media (max-width: 480px) {
+  .cremas-lista {
+    ol {
+      flex-direction: column; // Tarjetas una debajo de la otra
+      align-items: center; // Alinear tarjetas al centro
+      gap: 20px; // Espacio entre tarjetas
+      max-width: 500px; // Limitar el ancho máximo para mejorar la presentación
+    }
+
+    li {
+      width: 100%; // Ancho completo para pantallas muy pequeñas
+      max-width: 500px; // Limitar el ancho máximo para mejorar la presentación
+      padding: 15px; // Ajustar el espacio interno
+    }
+
+    img {
+      max-width: 100%; // Asegurar que las imágenes no se salgan del contenedor
+      height: auto; // Mantener la proporción de las imágenes
+    }
   }
 }
